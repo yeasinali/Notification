@@ -32,17 +32,7 @@
         tools:ignore="HardcodedText,SpUsage"
         tools:text="Show Token" />
 
-    <EditText
-        android:id="@+id/edit_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button_show"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="73dp"
-        android:layout_marginEnd="17dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+
 
 
 </RelativeLayout>

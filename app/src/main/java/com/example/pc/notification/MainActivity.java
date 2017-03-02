@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -18,18 +19,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnShowToken = (Button)findViewById(R.id.button_show);
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
+        FirebaseInstanceId.getInstance().getToken();
 
-        btnShowToken.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String token = FirebaseInstanceId.getInstance().getToken();
-
-
-                Log.d(TAG,"Token :"+token);
-                Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Button btnShowToken = (Button)findViewById(R.id.button_show);
+//
+//        btnShowToken.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String token = FirebaseInstanceId.getInstance().getToken();
+//                Log.d(TAG,"Token :"+token);
+//                Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 //
 //        if (getIntent().getExtras() != null) {
 //            for (String key : getIntent().getExtras().keySet()) {
